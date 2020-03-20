@@ -1,10 +1,9 @@
 package hw5;
 
 public class CheckingAccount extends Account {
-	
+
 	private double fee;
-	
-	
+
 	//Constructor using Superclass
 	public CheckingAccount() {
 		super();
@@ -16,7 +15,7 @@ public class CheckingAccount extends Account {
 		this.setBalance(amount);
 		this.fee = fee;
 	}
-	
+
 	//Getter method for "fee"
 	public double getFee() {
 		return fee;
@@ -30,11 +29,11 @@ public class CheckingAccount extends Account {
 	//Uses the local Acount object. Subtracts fee from this.balance. Returns double "fee"
 	public double applyFee() {
 		double totalFee = 0.0;
-		 
-		for(int i = 0; i <= this.getTrans(); i++) {
+
+		for (int i = 0; i <= this.getTrans(); i++) {
 			totalFee += fee;
 		}
-		
+
 		this.setBalance((this.getBalance() - totalFee));
 		return totalFee;
 	}
