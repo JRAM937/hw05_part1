@@ -1,26 +1,23 @@
 package hw5;
-import java.lang.Math; 
 
-public class SavingsAccount extends Account{
+public class SavingsAccount extends Account {
 	private double interestRate; //Monthly intetest rate
-	@SuppressWarnings("unused")
 	private double interestPayment; //Last monthly payment
-	
+
 	//constructor using superclass
 	public SavingsAccount() {
 		super();
 		this.interestRate = 0.0;
 		this.interestPayment = 0.0;
 	}
-	
+
 	//constructor using parameters
 	public SavingsAccount(double balance, double rate) {
 		super();
 		this.setBalance(balance);
 		this.interestRate = rate;
 	}
-	
-	
+
 	public double getInterestRate() {
 		return interestRate;
 	}
@@ -38,11 +35,10 @@ public class SavingsAccount extends Account{
 	}
 
 	public double calcInterest() {
-		double payment = interestRate*this.getBalance();
+		double payment = interestRate * this.getBalance();
 		this.setInterestPayment(payment);
 		this.setBalance(this.getBalance() + payment);
 		return this.interestPayment;
 	}
-	
-}
 
+}
