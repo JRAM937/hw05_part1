@@ -38,9 +38,11 @@ public class SavingsAccount extends Account{
 	}
 
 	public double calcInterest() {
-		double paymentDue = (this.interestRate*this.getBalance())/Math.pow((1-(1+this.interestRate)), -12);
-		this.setInterestPayment(paymentDue);
+		double payment = interestRate*this.getBalance();
+		this.setInterestPayment(payment);
+		this.setBalance(this.getBalance() + payment);
 		return this.interestPayment;
 	}
 	
 }
+
